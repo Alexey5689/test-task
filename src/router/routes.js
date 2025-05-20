@@ -12,11 +12,19 @@ export const routes = [
                 path: 'tender-list',
                 name: 'TenderList',
                 component: TenderList,
+                meta: {
+                    title: 'Tender List',
+                    transition: 'slide-left',
+                },
             },
             {
                 path: 'tender-info/:tenderId',
                 name: 'TenderInfo',
                 component: TenderInfo,
+                meta: {
+                    title: 'Tender Info',
+                    transition: 'slide-right',
+                },
             },
         ],
     },

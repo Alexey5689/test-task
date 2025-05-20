@@ -1,0 +1,25 @@
+.loading,
+.error,
+.no-data {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    color: red;
+}
+.loading {
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    display: inline-block;
+    font-family: monospace;
+    font-size: 18px;
+    clip-path: inset(0 4ch 0 0);
+    animation: fadeIn 1s steps(4) infinite;
+}
+@keyframes fadeIn {
+    to {
+        clip-path: inset(0 -1ch 0 0);
+    }
+}
