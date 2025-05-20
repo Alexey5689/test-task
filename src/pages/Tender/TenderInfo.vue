@@ -34,9 +34,9 @@ onMounted(() => {
 
 <template>
     <div class="tender-single-container">
-        <div v-if="isLoading" class="loading">Загрузка...</div>
+        <div v-if="isLoading" class="loading" style="color: red">Загрузка...</div>
         <div v-else-if="error" class="error">{{ error }}</div>
-        <div v-else-if="tender" class="tender-single">
+        <div v-else-if="tender">
             <button @click="handleBack" class="button">← Назад к списку</button>
 
             <div class="tender-card expanded">
@@ -54,74 +54,3 @@ onMounted(() => {
         <div v-else class="no-data">Тендер не найден</div>
     </div>
 </template>
-
-<style scoped>
-.tender-single-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-.tender-card.expanded {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 500px;
-    padding: 30px;
-    background: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border: 1px solid #ddd;
-}
-
-.tender-title {
-    font-size: 2rem;
-    color: #42b983;
-    margin: 0 0 20px 0;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #eee;
-}
-
-.tender-meta {
-    display: flex;
-    gap: 15px;
-    margin-bottom: 20px;
-    color: #666;
-    font-size: 0.9rem;
-}
-
-.meta-item {
-    background: #eee;
-    padding: 5px 10px;
-    border-radius: 4px;
-}
-
-.description-wrapper.scrollable {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    padding: 15px;
-    background: white;
-    border-radius: 4px;
-    border: 1px solid #eee;
-    max-height: 600px;
-    overflow-y: auto;
-}
-
-.description-wrapper.scrollable p {
-    margin: 0;
-    white-space: pre-line;
-}
-
-/* Стили для скроллбара */
-.description-wrapper.scrollable::-webkit-scrollbar {
-    width: 8px;
-}
-
-.description-wrapper.scrollable::-webkit-scrollbar-thumb {
-    background: #42b983;
-    border-radius: 4px;
-}
-
-.description-wrapper.scrollable::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-</style>
